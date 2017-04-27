@@ -14,7 +14,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/create_movie" method="post">
+    <form action="/create_movie" method="post" enctype="multipart/form-data">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -33,7 +33,7 @@
           Cover art
         </label>
 
-        <input type="text" id="cover_art" name="cover_art" placeholder="Cover art" class="form-control" value="<%= @movie.cover_art %>">
+        <input type="file" id="cover_art" name="cover_art" class="form-control">
       </div>
 
       <!-- Label and input for director_id -->
